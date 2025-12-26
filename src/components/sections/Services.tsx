@@ -6,91 +6,81 @@ const services = [
     icon: Server,
     title: "ERP & Integración",
     description:
-      "Implementamos y configuramos sistemas de gestión empresarial que centralizan tus operaciones y generan información útil.",
+      "Implementamos sistemas de gestión empresarial que centralizan tus operaciones.",
     features: ["Facturación electrónica", "Gestión de inventarios", "Integración contable"],
   },
   {
     icon: FileText,
     title: "Contabilidad & Reportes",
     description:
-      "Llevamos tu contabilidad con precisión y generamos reportes que te permiten tomar decisiones informadas.",
+      "Contabilidad precisa y reportes que permiten tomar decisiones informadas.",
     features: ["Estados financieros", "Reportes gerenciales", "Análisis de rentabilidad"],
   },
   {
     icon: Calculator,
     title: "Impuestos & Planificación",
     description:
-      "Optimizamos tu carga tributaria con planificación fiscal estratégica y cumplimiento normativo.",
+      "Optimización tributaria con planificación fiscal estratégica.",
     features: ["IVA e IRAE", "Planificación fiscal", "Cumplimiento DGI"],
   },
   {
     icon: Users,
     title: "Sueldos & Gestión laboral",
     description:
-      "Administramos nóminas, obligaciones laborales y documentación del personal con exactitud.",
+      "Administración de nóminas y obligaciones laborales con exactitud.",
     features: ["Liquidación de sueldos", "BPS y MTSS", "Contratos y altas"],
   },
 ];
 
 const Services = () => {
   return (
-    <section id="servicios" className="relative py-24 lg:py-32">
-      {/* Background */}
-      <div className="absolute inset-0 bg-secondary/30" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(43_56%_53%/0.03),transparent_70%)]" />
-
+    <section id="servicios" className="relative py-32 lg:py-40 bg-background">
       <div className="container relative mx-auto px-4 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-block text-sm font-medium text-primary uppercase tracking-wider mb-4">
-            Nuestros Servicios
-          </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Soluciones que ordenan, automatizan y hacen crecer
+        <div className="max-w-2xl mx-auto text-center mb-20">
+          <div className="line-gold mx-auto mb-6" />
+          <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
+            Soluciones que ordenan y hacen crecer
           </h2>
-          <div className="line-gold mx-auto max-w-xs" />
+          <p className="text-muted-foreground">
+            Servicios diseñados para empresas que buscan control real.
+          </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="group relative p-8 rounded-2xl bg-card/60 backdrop-blur-sm border border-border hover:border-primary/30 transition-all duration-500 hover:shadow-[0_0_40px_hsl(43_56%_53%/0.1)]"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="group p-8 rounded-lg bg-card border border-border hover:border-accent/50 transition-colors duration-300"
             >
               {/* Icon */}
-              <div className="w-14 h-14 rounded-xl bg-secondary flex items-center justify-center mb-6 border border-border group-hover:border-primary/50 transition-colors duration-300">
-                <service.icon className="w-7 h-7 text-primary" />
-              </div>
+              <service.icon className="w-6 h-6 text-accent mb-6" strokeWidth={1.5} />
 
               {/* Content */}
-              <h3 className="font-display text-xl font-semibold text-foreground mb-3">
+              <h3 className="text-lg font-medium text-foreground mb-3">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground mb-6">{service.description}</p>
+              <p className="text-muted-foreground text-sm mb-6">{service.description}</p>
 
               {/* Features */}
               <ul className="space-y-2">
                 {service.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    <span className="w-1 h-1 rounded-full bg-accent" />
                     {feature}
                   </li>
                 ))}
               </ul>
-
-              {/* Hover Effect Line */}
-              <div className="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
           ))}
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-16">
           <Link
             to="/servicios"
-            className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
+            className="inline-flex items-center gap-2 text-sm text-foreground font-medium hover:text-accent transition-colors"
           >
             Ver todos los servicios en detalle
             <svg
@@ -102,7 +92,7 @@ const Services = () => {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth={2}
+                strokeWidth={1.5}
                 d="M9 5l7 7-7 7"
               />
             </svg>
