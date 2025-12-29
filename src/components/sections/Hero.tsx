@@ -6,46 +6,40 @@ const Hero = () => {
   const whatsappUrl = "https://wa.me/59898645841?text=Hola%2C%20vi%20la%20web%20de%20Faro%20del%20Este%20y%20quiero%20ordenar%20mis%20n%C3%BAmeros.";
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image - positioned to the right */}
-      <div 
-        className="absolute inset-0"
-        style={{
-          backgroundImage: `url(${heroBackground})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'right center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      />
+    <section className="relative flex flex-col">
+      {/* Hero Image Container */}
+      <div className="relative w-full h-[60vh] md:h-[70vh]">
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url(${heroBackground})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        />
+        
+        {/* Subtle gradient overlay at bottom for transition */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      </div>
       
-      {/* Gradient overlay - stronger on left for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/20" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40" />
-      
-      <div className="container relative z-10 mx-auto px-4 lg:px-8 pt-32 pb-24">
-        <div className="max-w-2xl">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm mb-8 animate-fade-in">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-            <span className="text-sm text-white/90">
-              Estudio Contable con enfoque tecnológico
-            </span>
-          </div>
-
+      {/* Text Content - Below the image */}
+      <div className="bg-background py-16 lg:py-20">
+        <div className="container mx-auto px-4 lg:px-8 text-center">
           {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-white mb-6 animate-fade-in-up leading-tight tracking-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-foreground mb-6 animate-fade-in-up leading-tight tracking-tight">
             Contabilidad + Tecnología
             <br />
-            <span className="text-white/80 font-normal">para decisiones de negocio</span>
+            <span className="text-muted-foreground font-normal">para decisiones de negocio</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg text-white/80 max-w-xl mb-10 animate-fade-in-delay-1">
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-10 animate-fade-in-delay-1">
             ERP, impuestos y gestión financiera para empresas que quieren crecer con datos.
           </p>
 
           {/* CTA Button - Only WhatsApp */}
-          <div className="flex flex-col items-start gap-4 animate-fade-in-delay-2">
+          <div className="flex flex-col items-center gap-4 animate-fade-in-delay-2">
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
               <Button variant="whatsapp" size="lg" className="gap-2 min-w-[220px]">
                 <Phone className="w-4 h-4" />
@@ -54,7 +48,7 @@ const Hero = () => {
             </a>
             
             {/* Trust Message */}
-            <p className="text-sm text-white/70">
+            <p className="text-sm text-muted-foreground">
               Sin compromiso, te orientamos con gusto.
             </p>
           </div>
