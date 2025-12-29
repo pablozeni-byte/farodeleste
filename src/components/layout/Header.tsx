@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoFaro from "@/assets/logo-faro.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,18 +37,14 @@ const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-md border border-accent flex items-center justify-center">
-              <span className="font-semibold text-foreground">F</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-lg font-medium text-foreground">
-                Faro del Este
-              </span>
-              <span className="text-xs text-muted-foreground tracking-wide">
-                Estudio Contable
-              </span>
-            </div>
+          <Link to="/" className="flex items-center">
+            <img 
+              src={logoFaro} 
+              alt="Faro del Este - Estudio Contable" 
+              className={`h-12 w-auto transition-all duration-300 ${
+                isScrolled ? '' : 'brightness-0 invert'
+              }`}
+            />
           </Link>
 
           {/* Desktop Navigation */}
