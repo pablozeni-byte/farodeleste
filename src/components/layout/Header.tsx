@@ -21,6 +21,7 @@ const Header = () => {
     { name: "Inicio", path: "/" },
     { name: "Servicios", path: "/servicios" },
     { name: "Enfoque", path: "/enfoque" },
+    { name: "Faro Pagos", path: "/faro-pagos" },
     { name: "Contacto", path: "/contacto" },
   ];
 
@@ -41,7 +42,7 @@ const Header = () => {
             <img 
               src={logoFaro} 
               alt="Faro del Este - Estudio Contable" 
-              className={`h-12 w-auto transition-all duration-300 ${
+              className={`h-14 md:h-16 w-auto transition-all duration-300 ${
                 isScrolled ? '' : 'brightness-0 invert'
               }`}
             />
