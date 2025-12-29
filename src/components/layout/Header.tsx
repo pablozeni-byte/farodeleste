@@ -42,7 +42,7 @@ const Header = () => {
             <img 
               src={logoFaro} 
               alt="Faro del Este - Estudio Contable" 
-              className={`h-14 md:h-16 w-auto transition-all duration-300 ${
+              className={`h-16 md:h-20 w-auto transition-all duration-300 ${
                 isScrolled ? '' : 'brightness-0 invert'
               }`}
             />
