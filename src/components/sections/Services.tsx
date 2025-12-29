@@ -1,5 +1,4 @@
 import { Server, FileText, Calculator, Users } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -8,6 +7,7 @@ const services = [
     description:
       "Implementamos sistemas de gestión empresarial que centralizan tus operaciones.",
     features: ["Facturación electrónica", "Gestión de inventarios", "Integración contable"],
+    anchor: "erp-integracion",
   },
   {
     icon: FileText,
@@ -15,6 +15,7 @@ const services = [
     description:
       "Contabilidad precisa y reportes que permiten tomar decisiones informadas.",
     features: ["Estados financieros", "Reportes gerenciales", "Análisis de rentabilidad"],
+    anchor: "contabilidad-reportes",
   },
   {
     icon: Calculator,
@@ -22,6 +23,7 @@ const services = [
     description:
       "Optimización tributaria con planificación fiscal estratégica.",
     features: ["IVA e IRAE", "Planificación fiscal", "Cumplimiento DGI"],
+    anchor: "impuestos-planificacion",
   },
   {
     icon: Users,
@@ -29,8 +31,16 @@ const services = [
     description:
       "Administración de nóminas y obligaciones laborales con exactitud.",
     features: ["Liquidación de sueldos", "BPS y MTSS", "Contratos y altas"],
+    anchor: "sueldos-gestion",
   },
 ];
+
+const scrollToSection = (anchor: string) => {
+  const element = document.getElementById(anchor);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+};
 
 const Services = () => {
   return (
@@ -49,10 +59,11 @@ const Services = () => {
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
-          {services.map((service, index) => (
-            <div
+          {services.map((service) => (
+            <button
               key={service.title}
-              className="group p-8 rounded-lg bg-card border border-border hover:border-accent/50 transition-colors duration-300"
+              onClick={() => scrollToSection(service.anchor)}
+              className="group p-8 rounded-lg bg-card border border-border hover:border-accent/50 transition-colors duration-300 text-left cursor-pointer"
             >
               {/* Icon */}
               <service.icon className="w-6 h-6 text-accent mb-6" strokeWidth={1.5} />
@@ -72,31 +83,8 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </button>
           ))}
-        </div>
-
-        {/* CTA */}
-        <div className="text-center mt-16">
-          <Link
-            to="/servicios"
-            className="inline-flex items-center gap-2 text-sm text-foreground font-medium hover:text-accent transition-colors"
-          >
-            Ver todos los servicios en detalle
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </Link>
         </div>
       </div>
     </section>
