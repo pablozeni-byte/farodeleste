@@ -1,4 +1,6 @@
 import { Server, FileText, Calculator, Users } from "lucide-react";
+import { motion } from "framer-motion";
+import servicesImage from "@/assets/services-data-flow.png";
 
 const services = [
   {
@@ -42,50 +44,81 @@ const scrollToSection = (anchor: string) => {
   }
 };
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6 },
+  },
+};
+
 const Services = () => {
   return (
-    <section id="servicios" className="relative py-32 lg:py-40 bg-background">
+    <section id="servicios" className="relative py-32 lg:py-40 bg-primary overflow-hidden">
+      <div className="absolute inset-0">
+        <img src={servicesImage} alt="Data analytics visualization" className="w-full h-full object-cover opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary via-primary/95 to-primary" />
+      </div>
+
       <div className="container relative mx-auto px-4 lg:px-8">
-        {/* Section Header */}
-        <div className="max-w-2xl mx-auto text-center mb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="max-w-2xl mx-auto text-center mb-20"
+        >
           <div className="line-gold mx-auto mb-6" />
-          <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-semibold text-primary-foreground mb-4">
             Soluciones que ordenan y hacen crecer
           </h2>
-          <p className="text-muted-foreground">
-            Servicios diseñados para empresas que buscan control real.
-          </p>
-        </div>
+          <p className="text-primary-foreground/70">Servicios diseñados para empresas que buscan control real.</p>
+        </motion.div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto"
+        >
           {services.map((service) => (
-            <button
+            <motion.button
               key={service.title}
+              variants={itemVariants}
               onClick={() => scrollToSection(service.anchor)}
-              className="group p-8 rounded-lg bg-card border border-border hover:border-accent/50 transition-colors duration-300 text-left cursor-pointer"
+              whileHover={{ scale: 1.02, y: -5 }}
+              whileTap={{ scale: 0.98 }}
+              className="group p-8 rounded-lg bg-card/10 backdrop-blur-sm border border-accent/20 hover:border-accent/50 hover:bg-card/20 transition-all duration-300 text-left cursor-pointer"
             >
-              {/* Icon */}
-              <service.icon className="w-6 h-6 text-accent mb-6" strokeWidth={1.5} />
-
-              {/* Content */}
-              <h3 className="text-lg font-medium text-foreground mb-3">
+              <div className="relative mb-6">
+                <div className="absolute inset-0 w-10 h-10 bg-accent/20 rounded-full blur-xl" />
+                <service.icon className="relative w-6 h-6 text-accent" strokeWidth={1.5} />
+              </div>
+              <h3 className="text-lg font-medium text-primary-foreground mb-3 group-hover:text-accent transition-colors">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground text-sm mb-6">{service.description}</p>
-
-              {/* Features */}
+              <p className="text-primary-foreground/70 text-sm mb-6">{service.description}</p>
               <ul className="space-y-2">
                 {service.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <span className="w-1 h-1 rounded-full bg-accent" />
+                  <li key={feature} className="flex items-center gap-2 text-sm text-primary-foreground/60">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                     {feature}
                   </li>
                 ))}
               </ul>
-            </button>
+            </motion.button>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
