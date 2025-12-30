@@ -1,6 +1,7 @@
 import { Server, FileText, Calculator, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import servicesImage from "@/assets/services-data-flow.png";
+import servicesHeader from "@/assets/services-header.png";
 
 const services = [
   {
@@ -63,8 +64,18 @@ const itemVariants = {
 
 const Services = () => {
   return (
-    <section id="servicios" className="relative py-32 lg:py-40 bg-primary overflow-hidden">
-      <div className="absolute inset-0">
+<section id="servicios" className="relative bg-primary overflow-hidden">
+      {/* Header Image */}
+      <div className="relative h-64 md:h-80 lg:h-96 w-full overflow-hidden">
+        <img 
+          src={servicesHeader} 
+          alt="Business services visualization with golden technology elements" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/50 to-primary" />
+      </div>
+
+      <div className="absolute inset-0 top-64 md:top-80 lg:top-96">
         <img src={servicesImage} alt="Data analytics visualization" className="w-full h-full object-cover opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-b from-primary via-primary/95 to-primary" />
       </div>

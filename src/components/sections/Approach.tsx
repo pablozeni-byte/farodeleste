@@ -2,6 +2,7 @@ import { Cpu, TrendingUp, FileCheck, Headphones } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import approachImage from "@/assets/approach-analytics.png";
+import approachHeader from "@/assets/approach-header.png";
 
 const features = [
   {
@@ -50,8 +51,18 @@ const itemVariants = {
 
 const Approach = () => {
   return (
-    <section className="relative py-32 lg:py-40 bg-background overflow-hidden">
-      <div className="container relative mx-auto px-4 lg:px-8">
+    <section className="relative bg-background overflow-hidden">
+      {/* Header Image */}
+      <div className="relative h-64 md:h-80 lg:h-96 w-full overflow-hidden">
+        <img 
+          src={approachHeader} 
+          alt="Strategic vision lighthouse with golden data connections" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
+      </div>
+
+      <div className="container relative mx-auto px-4 lg:px-8 py-24 lg:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
           {/* Image Side */}
           <motion.div

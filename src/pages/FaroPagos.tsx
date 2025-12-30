@@ -3,6 +3,7 @@ import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { CreditCard, Smartphone, RefreshCw, Shield } from "lucide-react";
 import faroPagosImage from "@/assets/faro-pagos-payments.png";
+import faroPagosHeader from "@/assets/faro-pagos-header.png";
 
 const features = [
   {
@@ -31,9 +32,19 @@ const FaroPagos = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-32 pb-24">
+      <main className="pt-20 pb-24">
+        {/* Header Image */}
+        <div className="relative h-64 md:h-80 lg:h-96 w-full overflow-hidden">
+          <img 
+            src={faroPagosHeader} 
+            alt="Digital payments with golden fintech elements" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
+        </div>
+
         {/* Hero Section */}
-        <section className="relative overflow-hidden">
+        <section className="relative overflow-hidden pt-12">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
               {/* Content */}
