@@ -8,7 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin, Send, MessageCircle } from "lucide-react";
 import { z } from "zod";
 import { motion } from "framer-motion";
-import contactImage from "@/assets/contact-communication.png";
+import contactoHeader from "@/assets/contacto-page-header.png";
 
 const contactSchema = z.object({
   nombre: z.string().trim().min(1, "El nombre es requerido").max(100, "El nombre es muy largo"),
@@ -79,40 +79,33 @@ const Contacto = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="pt-32 pb-24">
-        <div className="container mx-auto px-4 lg:px-8">
-          {/* Header with Image */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto mb-20">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="line-gold mb-6" />
-              <h1 className="text-4xl md:text-5xl font-semibold text-foreground mb-6">
-                Conversemos sobre tu negocio
-              </h1>
-              <p className="text-muted-foreground">
-                Estamos aquí para ayudarte. Contanos qué necesitás y te responderemos a la brevedad.
-              </p>
-            </motion.div>
+      <main className="pb-24">
+        {/* Header Image */}
+        <div className="relative h-64 md:h-80 lg:h-[420px] w-full overflow-hidden">
+          <img 
+            src={contactoHeader} 
+            alt="Comunicación corporativa moderna" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/30 to-background" />
+        </div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative hidden lg:block"
-            >
-              <div className="relative">
-                <div className="absolute -inset-4 bg-accent/10 rounded-2xl blur-2xl" />
-                <img
-                  src={contactImage}
-                  alt="Modern business communication"
-                  className="relative w-full rounded-xl border border-accent/20 shadow-2xl"
-                />
-              </div>
-            </motion.div>
-          </div>
+        <div className="container mx-auto px-4 lg:px-8 py-16">
+          {/* Header Text */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-2xl mx-auto text-center mb-16"
+          >
+            <div className="line-gold mx-auto mb-6" />
+            <h1 className="text-4xl md:text-5xl font-semibold text-foreground mb-6">
+              Conversemos sobre tu negocio
+            </h1>
+            <p className="text-muted-foreground">
+              Estamos aquí para ayudarte. Contanos qué necesitás y te responderemos a la brevedad.
+            </p>
+          </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl mx-auto">
             {/* Contact Form */}

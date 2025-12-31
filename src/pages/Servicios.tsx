@@ -2,6 +2,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Phone, Server, FileText, Calculator, Users, Check } from "lucide-react";
+import serviciosHeader from "@/assets/servicios-page-header.png";
 
 const services = [
   {
@@ -69,9 +70,19 @@ const Servicios = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="pt-32 pb-24">
+      <main className="pb-24">
+        {/* Header Image */}
+        <div className="relative h-64 md:h-80 lg:h-[420px] w-full overflow-hidden">
+          <img 
+            src={serviciosHeader} 
+            alt="Servicios contables con tecnología dorada" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/30 to-background" />
+        </div>
+
         {/* Hero Section */}
-        <section className="container mx-auto px-4 lg:px-8 mb-24">
+        <section className="container mx-auto px-4 lg:px-8 py-16 mb-8">
           <div className="max-w-2xl mx-auto text-center">
             <div className="line-gold mx-auto mb-6" />
             <h1 className="text-4xl md:text-5xl font-semibold text-foreground mb-6">
