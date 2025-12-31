@@ -32,19 +32,19 @@ const FaroPagos = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-20 pb-24">
+      <main className="pb-24">
         {/* Header Image */}
-        <div className="relative h-64 md:h-80 lg:h-96 w-full overflow-hidden">
+        <div className="relative h-64 md:h-80 lg:h-[420px] w-full overflow-hidden">
           <img 
             src={faroPagosHeader} 
-            alt="Digital payments with golden fintech elements" 
+            alt="Pagos digitales con elementos fintech dorados" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/30 to-background" />
         </div>
 
         {/* Hero Section */}
-        <section className="relative overflow-hidden pt-12">
+        <section className="relative overflow-hidden py-16">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
               {/* Content */}
