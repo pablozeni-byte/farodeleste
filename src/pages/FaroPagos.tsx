@@ -1,34 +1,14 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
-import { CreditCard, Smartphone, RefreshCw, Shield } from "lucide-react";
-import faroPagosImage from "@/assets/faro-pagos-payments.png";
+import { ExternalLink, CheckCircle, XCircle, Shield, Smartphone } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import faroPagosHeader from "@/assets/faro-pagos-header.png";
 
-const features = [
-  {
-    icon: CreditCard,
-    title: "Múltiples medios de pago",
-    description: "Tarjetas, transferencias y más opciones para tus clientes.",
-  },
-  {
-    icon: Smartphone,
-    title: "Pagos móviles",
-    description: "Cobra desde cualquier lugar con tu dispositivo móvil.",
-  },
-  {
-    icon: RefreshCw,
-    title: "Conciliación automática",
-    description: "Integración directa con tu contabilidad.",
-  },
-  {
-    icon: Shield,
-    title: "Seguridad garantizada",
-    description: "Transacciones protegidas con los más altos estándares.",
-  },
-];
-
 const FaroPagos = () => {
+  const faroUrl = "https://easy-rut-pay.lovable.app";
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -46,98 +26,224 @@ const FaroPagos = () => {
         {/* Hero Section */}
         <section className="relative overflow-hidden py-16">
           <div className="container mx-auto px-4 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
-              {/* Content */}
+            <div className="max-w-4xl mx-auto text-center">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <div className="line-gold mb-6" />
+                <div className="line-gold mx-auto mb-6" />
                 <h1 className="text-4xl md:text-5xl font-semibold text-foreground mb-6">
                   Faro Pagos
                 </h1>
-                <p className="text-xl text-accent mb-4">
-                  Próximamente
+                <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+                  Tu acceso rápido y simple a los pagos de DGI y BPS.
                 </p>
-                <p className="text-muted-foreground mb-8">
-                  Tu plataforma integral de cobros y pagos digitales, diseñada para empresas que buscan 
-                  simplificar sus operaciones financieras con tecnología de punta.
-                </p>
-
-                {/* Features Preview */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12">
-                  {features.map((feature, index) => (
-                    <motion.div
-                      key={feature.title}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                      className="flex gap-3 group"
-                    >
-                      <div className="relative">
-                        <div className="absolute inset-0 w-8 h-8 bg-accent/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
-                        <feature.icon className="relative w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
-                      </div>
-                      <div>
-                        <h4 className="font-medium text-foreground text-sm mb-1">{feature.title}</h4>
-                        <p className="text-xs text-muted-foreground">{feature.description}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-
-              {/* Image */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative"
-              >
-                <div className="relative">
-                  {/* Golden glow effect */}
-                  <div className="absolute -inset-4 bg-accent/10 rounded-2xl blur-3xl" />
-                  <img
-                    src={faroPagosImage}
-                    alt="Digital payments and fintech visualization"
-                    className="relative w-full rounded-xl border border-accent/20 shadow-2xl"
-                  />
-                </div>
+                <Button 
+                  variant="goldAccent" 
+                  size="lg" 
+                  className="gap-2"
+                  onClick={() => window.open(faroUrl, '_blank')}
+                >
+                  Ingresar a Faro Pagos
+                  <ExternalLink className="w-4 h-4" />
+                </Button>
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Coming Soon Banner */}
+        {/* ¿Qué es Faro Pagos? */}
         <motion.section
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-24"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="py-16"
         >
           <div className="container mx-auto px-4 lg:px-8">
             <div className="max-w-4xl mx-auto">
-              <div className="p-8 md:p-12 rounded-2xl bg-primary border border-accent/20 text-center relative overflow-hidden">
-                {/* Decorative elements */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl" />
-                <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent/5 rounded-full blur-3xl" />
-                
-                <div className="relative">
-                  <h2 className="text-2xl md:text-3xl font-semibold text-primary-foreground mb-4">
-                    Estamos trabajando en algo increíble
-                  </h2>
-                  <p className="text-primary-foreground/70 max-w-xl mx-auto">
-                    Faro Pagos será la solución definitiva para gestionar todos tus cobros y pagos 
-                    en un solo lugar, con integración total a tu sistema contable.
-                  </p>
-                  
-                  <div className="mt-8 flex items-center justify-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                    <span className="text-sm text-accent font-medium">En desarrollo</span>
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
+                ¿Qué es Faro Pagos?
+              </h2>
+              <p className="text-muted-foreground mb-8">
+                Faro Pagos te dirige directamente a los sitios oficiales de pago de DGI y BPS, 
+                evitando errores y pérdida de tiempo. Configurás tu empresa una sola vez y luego 
+                accedés directamente para realizar el pago mensual desde el portal oficial.
+              </p>
+              <ul className="space-y-4">
+                {[
+                  "Elegí el organismo y listo",
+                  "Todo se paga dentro del sitio oficial",
+                  "Sin pasos innecesarios"
+                ].map((item, index) => (
+                  <li key={index} className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
+                    <span className="text-foreground">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* ¿Qué NO es Faro Pagos? */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="py-16 bg-primary/50"
+        >
+          <div className="container mx-auto px-4 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-8">
+                ¿Qué NO es Faro Pagos?
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  "No procesa pagos",
+                  "No maneja dinero",
+                  "No pide claves",
+                  "No guarda contraseñas",
+                  "No reemplaza a DGI ni BPS",
+                  "Todo el pago ocurre dentro del sitio oficial del organismo"
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center gap-3 p-3 rounded-lg bg-background/50">
+                    <XCircle className="w-5 h-5 text-destructive flex-shrink-0" />
+                    <span className="text-foreground font-medium">{item}</span>
                   </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Seguridad y privacidad */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="py-16"
+        >
+          <div className="container mx-auto px-4 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <div className="flex items-start gap-4">
+                <div className="p-3 rounded-full bg-accent/10">
+                  <Shield className="w-8 h-8 text-accent" />
+                </div>
+                <div>
+                  <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
+                    Seguridad y privacidad
+                  </h2>
+                  <p className="text-muted-foreground">
+                    Los únicos datos guardados son el RUT y el nombre de la empresa, y se guardan 
+                    únicamente en tu dispositivo. Se pueden modificar con "Cambiar RUT".
+                  </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* ¿Cómo guardarlo como App? */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="py-16 bg-primary/50"
+        >
+          <div className="container mx-auto px-4 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <div className="flex items-start gap-4 mb-8">
+                <div className="p-3 rounded-full bg-accent/10">
+                  <Smartphone className="w-8 h-8 text-accent" />
+                </div>
+                <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
+                  ¿Cómo guardarlo como App en tu celular?
+                </h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="p-6 rounded-xl bg-background border border-border">
+                  <h3 className="font-semibold text-foreground mb-3">Android (Chrome)</h3>
+                  <p className="text-muted-foreground">
+                    Menú ≡ → Añadir → Pantalla principal
+                  </p>
+                </div>
+                <div className="p-6 rounded-xl bg-background border border-border">
+                  <h3 className="font-semibold text-foreground mb-3">iPhone (Safari)</h3>
+                  <p className="text-muted-foreground">
+                    Compartir → Agregar a pantalla de inicio
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Tabla resumen */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="py-16"
+        >
+          <div className="container mx-auto px-4 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <div className="rounded-xl border border-border overflow-hidden">
+                <Table>
+                  <TableHeader>
+                    <TableRow className="bg-primary/50">
+                      <TableHead className="text-accent font-semibold">Faro Pagos es…</TableHead>
+                      <TableHead className="text-accent font-semibold">Faro Pagos NO es…</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell className="text-foreground">Un acceso directo a DGI y BPS</TableCell>
+                      <TableCell className="text-foreground">Un procesador de pagos</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="text-foreground">Rápido y sin pasos innecesarios</TableCell>
+                      <TableCell className="text-foreground">Un intermediario de dinero</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="text-foreground">Seguro (datos solo en tu dispositivo)</TableCell>
+                      <TableCell className="text-foreground">Un recolector de claves</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="text-foreground">Una herramienta de conveniencia</TableCell>
+                      <TableCell className="text-foreground">Un reemplazo de los sitios oficiales</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* CTA Final */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="py-16"
+        >
+          <div className="container mx-auto px-4 lg:px-8">
+            <div className="max-w-4xl mx-auto text-center">
+              <Button 
+                variant="goldAccent" 
+                size="lg" 
+                className="gap-2"
+                onClick={() => window.open(faroUrl, '_blank')}
+              >
+                Ingresar a Faro Pagos
+                <ExternalLink className="w-4 h-4" />
+              </Button>
             </div>
           </div>
         </motion.section>
