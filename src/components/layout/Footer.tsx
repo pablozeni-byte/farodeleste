@@ -40,11 +40,11 @@ const Footer = () => {
                 +598 98 645 841
               </a>
               <a
-                href="mailto:contacto@farodeeste.com"
+                href="mailto:estudiocontablefarodeleste@gmail.com"
                 className="flex items-center gap-3 text-primary-foreground/70 hover:text-accent transition-colors"
               >
                 <Mail className="w-4 h-4 text-accent" />
-                contacto@farodeeste.com
+                <span className="break-all">estudiocontablefarodeleste@gmail.com</span>
               </a>
               <div className="flex items-center gap-3 text-primary-foreground/70">
                 <MapPin className="w-4 h-4 text-accent" />
