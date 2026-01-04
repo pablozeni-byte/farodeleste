@@ -6,73 +6,51 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin, Send, MessageCircle } from "lucide-react";
-import { z } from "zod";
 import { motion } from "framer-motion";
 import contactoHeader from "@/assets/contacto-page-header.png";
 
-const contactSchema = z.object({
-  nombre: z.string().trim().min(1, "El nombre es requerido").max(100, "El nombre es muy largo"),
-  email: z.string().trim().email("Email inválido").max(255, "El email es muy largo"),
-  empresa: z.string().trim().max(100, "El nombre de empresa es muy largo").optional(),
-  mensaje: z.string().trim().min(1, "El mensaje es requerido").max(1000, "El mensaje es muy largo"),
-});
+const CONTACT_EMAIL = "estudiocontablefarodeleste@gmail.com";
 
 const Contacto = () => {
   const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     nombre: "",
     email: "",
-    empresa: "",
     mensaje: "",
   });
-  const [errors, setErrors] = useState<Record<string, string>>({});
 
   const whatsappUrl = "https://wa.me/59898645841?text=Hola%2C%20vi%20la%20web%20de%20Faro%20del%20Este%20y%20quiero%20ordenar%20mis%20n%C3%BAmeros.";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    if (errors[name]) {
-      setErrors((prev) => ({ ...prev, [name]: "" }));
-    }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setErrors({});
-
-    try {
-      const validatedData = contactSchema.parse(formData);
-      
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      
+    
+    const { nombre, email, mensaje } = formData;
+    
+    if (!nombre.trim() || !email.trim() || !mensaje.trim()) {
       toast({
-        title: "Mensaje enviado",
-        description: "Nos pondremos en contacto contigo pronto.",
+        title: "Campos requeridos",
+        description: "Por favor completá todos los campos antes de enviar.",
+        variant: "destructive",
       });
-      
-      setFormData({ nombre: "", email: "", empresa: "", mensaje: "" });
-    } catch (error) {
-      if (error instanceof z.ZodError) {
-        const fieldErrors: Record<string, string> = {};
-        error.errors.forEach((err) => {
-          if (err.path[0]) {
-            fieldErrors[err.path[0] as string] = err.message;
-          }
-        });
-        setErrors(fieldErrors);
-      } else {
-        toast({
-          title: "Error",
-          description: "Hubo un problema al enviar el mensaje. Intenta nuevamente.",
-          variant: "destructive",
-        });
-      }
-    } finally {
-      setIsSubmitting(false);
+      return;
     }
+    
+    const subject = encodeURIComponent(`Consulta de ${nombre}`);
+    const body = encodeURIComponent(
+      `Nombre: ${nombre}\nEmail: ${email}\n\nMensaje:\n${mensaje}`
+    );
+    
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+    
+    toast({
+      title: "Abriendo cliente de email",
+      description: "Se abrirá tu aplicación de correo para enviar el mensaje.",
+    });
   };
 
   return (
@@ -130,11 +108,8 @@ const Contacto = () => {
                     value={formData.nombre}
                     onChange={handleChange}
                     placeholder="Tu nombre"
-                    className={errors.nombre ? "border-destructive" : ""}
+                    required
                   />
-                  {errors.nombre && (
-                    <p className="text-sm text-destructive mt-1">{errors.nombre}</p>
-                  )}
                 </div>
 
                 <div>
@@ -148,28 +123,8 @@ const Contacto = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="tu@email.com"
-                    className={errors.email ? "border-destructive" : ""}
+                    required
                   />
-                  {errors.email && (
-                    <p className="text-sm text-destructive mt-1">{errors.email}</p>
-                  )}
-                </div>
-
-                <div>
-                  <label htmlFor="empresa" className="block text-sm font-medium text-foreground mb-2">
-                    Empresa
-                  </label>
-                  <Input
-                    id="empresa"
-                    name="empresa"
-                    value={formData.empresa}
-                    onChange={handleChange}
-                    placeholder="Nombre de tu empresa (opcional)"
-                    className={errors.empresa ? "border-destructive" : ""}
-                  />
-                  {errors.empresa && (
-                    <p className="text-sm text-destructive mt-1">{errors.empresa}</p>
-                  )}
                 </div>
 
                 <div>
@@ -183,11 +138,8 @@ const Contacto = () => {
                     onChange={handleChange}
                     placeholder="Contanos en qué podemos ayudarte"
                     rows={5}
-                    className={errors.mensaje ? "border-destructive" : ""}
+                    required
                   />
-                  {errors.mensaje && (
-                    <p className="text-sm text-destructive mt-1">{errors.mensaje}</p>
-                  )}
                 </div>
 
                 <Button
@@ -195,10 +147,9 @@ const Contacto = () => {
                   variant="navy"
                   size="lg"
                   className="w-full gap-2"
-                  disabled={isSubmitting}
                 >
                   <Send className="w-4 h-4" />
-                  {isSubmitting ? "Enviando..." : "Enviar mensaje"}
+                  Enviar mensaje
                 </Button>
               </form>
             </motion.div>
@@ -268,10 +219,10 @@ const Contacto = () => {
                     <div>
                       <p className="text-sm font-medium text-foreground">Email</p>
                       <a
-                        href="mailto:contacto@farodeeste.com"
-                        className="text-sm text-muted-foreground hover:text-accent transition-colors"
+                        href={`mailto:${CONTACT_EMAIL}`}
+                        className="text-sm text-muted-foreground hover:text-accent transition-colors break-all"
                       >
-                        contacto@farodeeste.com
+                        {CONTACT_EMAIL}
                       </a>
                     </div>
                   </div>
