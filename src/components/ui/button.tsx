@@ -19,6 +19,7 @@ const buttonVariants = cva(
         navyOutline: "border border-primary text-primary hover:bg-primary hover:text-primary-foreground",
         whatsapp: "bg-[#25D366] text-white font-medium hover:bg-[#20BD5A]",
         goldAccent: "bg-transparent border border-accent text-foreground hover:bg-accent/10",
+        goldSolid: "bg-accent text-primary font-semibold hover:bg-accent/90 border border-accent/80 shadow-md shadow-accent/20",
       },
       size: {
         default: "h-10 px-5 py-2",
