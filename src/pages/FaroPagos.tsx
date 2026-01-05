@@ -106,13 +106,13 @@ const FaroPagos = () => {
                 Tu acceso rápido y simple a los pagos de DGI y BPS.
               </p>
               <Button 
-                variant="goldSolid" 
+                variant="goldPremium" 
                 size="lg" 
                 className="gap-3 px-10 py-6 text-base rounded-lg"
                 onClick={() => window.open(faroUrl, '_blank')}
               >
                 Ingresar a Faro Pagos
-                <ExternalLink className="w-4 h-4 opacity-70" />
+                <ExternalLink className="w-4 h-4 text-accent opacity-80" />
               </Button>
             </motion.div>
           </div>
@@ -539,13 +539,13 @@ const FaroPagos = () => {
                 <h3 className="text-2xl font-semibold text-primary-foreground mb-4">¿Listo para simplificar tus pagos?</h3>
                 <p className="text-primary-foreground/70 mb-8">Accedé directamente a DGI y BPS sin complicaciones.</p>
                 <Button 
-                  variant="goldAccent" 
+                  variant="goldPremium" 
                   size="lg" 
-                  className="gap-2 shadow-lg shadow-accent/20"
+                  className="gap-3 px-10 py-6 text-base rounded-lg"
                   onClick={() => window.open(faroUrl, '_blank')}
                 >
                   Ingresar a Faro Pagos
-                  <ExternalLink className="w-4 h-4" />
+                  <ExternalLink className="w-4 h-4 text-accent opacity-80" />
                 </Button>
               </div>
             </div>
