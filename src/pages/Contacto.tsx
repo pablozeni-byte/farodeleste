@@ -65,7 +65,8 @@ const Contacto = () => {
             alt="Comunicación corporativa moderna" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/30 to-background" />
+          {/* Subtle fade starting lower, less intense */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent from-60% via-background/20 via-80% to-background" />
         </div>
 
         <div className="container mx-auto px-4 lg:px-8 py-16">
