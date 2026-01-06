@@ -55,9 +55,13 @@ const Header = () => {
                 key={link.path}
                 to={link.path}
                 className={`text-sm transition-colors duration-200 ${
-                  location.pathname === link.path
-                    ? "text-foreground font-medium"
-                    : "text-muted-foreground hover:text-foreground"
+                  isScrolled
+                    ? location.pathname === link.path
+                      ? "text-foreground font-semibold"
+                      : "text-muted-foreground hover:text-foreground"
+                    : location.pathname === link.path
+                      ? "text-white font-semibold"
+                      : "text-white/80 hover:text-white font-medium"
                 }`}
               >
                 {link.name}
@@ -77,7 +81,9 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-foreground"
+            className={`lg:hidden p-2 transition-colors duration-200 ${
+              isScrolled ? "text-foreground" : "text-white"
+            }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
