@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
@@ -7,6 +9,7 @@ import { motion } from "framer-motion";
 
 const services = [
   {
+    id: "erp-integracion",
     icon: Server,
     title: "ERP & Integración",
     description: "Implementamos sistemas de gestión empresarial que centralizan tus operaciones.",
@@ -21,6 +24,7 @@ const services = [
     result: "Un sistema centralizado donde todo fluye: ventas, stock, facturación y contabilidad integrados.",
   },
   {
+    id: "contabilidad-reportes",
     icon: FileText,
     title: "Contabilidad & Reportes",
     description: "Llevamos tu contabilidad con precisión y generamos reportes útiles para la gerencia.",
@@ -35,6 +39,7 @@ const services = [
     result: "Reportes claros que muestran la salud real de tu negocio para decisiones estratégicas.",
   },
   {
+    id: "impuestos-planificacion",
     icon: Calculator,
     title: "Impuestos & Planificación",
     description: "Optimizamos tu carga tributaria con planificación fiscal estratégica.",
@@ -49,6 +54,7 @@ const services = [
     result: "Carga tributaria optimizada legalmente. Cumplimiento sin sobresaltos.",
   },
   {
+    id: "sueldos-gestion",
     icon: Users,
     title: "Sueldos & Gestión laboral",
     description: "Administramos nóminas y obligaciones laborales con exactitud.",
@@ -78,7 +84,20 @@ const itemVariants = {
 };
 
 const Servicios = () => {
+  const location = useLocation();
   const whatsappUrl = "https://wa.me/59898645841?text=Hola%2C%20vi%20la%20web%20de%20Faro%20del%20Este%20y%20quiero%20ordenar%20mis%20n%C3%BAmeros.";
+
+  useEffect(() => {
+    if (location.hash) {
+      const elementId = location.hash.replace('#', '');
+      setTimeout(() => {
+        const element = document.getElementById(elementId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, [location.hash]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -125,9 +144,9 @@ const Servicios = () => {
             {services.map((service, index) => (
               <motion.div
                 key={service.title}
+                id={service.id}
                 variants={itemVariants}
-                className="relative"
-              >
+                className="relative scroll-mt-24">
                 {/* Service Block Container */}
                 <div className="relative rounded-2xl bg-gradient-to-br from-primary/5 via-card to-primary/5 border border-border overflow-hidden">
                   {/* Background decorative elements */}
