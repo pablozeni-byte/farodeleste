@@ -1,5 +1,6 @@
 import { Server, FileText, Calculator, Users } from "lucide-react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import servicesImage from "@/assets/services-data-flow.png";
 import servicesHeader from "@/assets/services-header.png";
 
@@ -38,11 +39,8 @@ const services = [
   },
 ];
 
-const scrollToSection = (anchor: string) => {
-  const element = document.getElementById(anchor);
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
+const navigateToService = (navigate: ReturnType<typeof useNavigate>, anchor: string) => {
+  navigate(`/servicios#${anchor}`);
 };
 
 const containerVariants = {
@@ -63,6 +61,8 @@ const itemVariants = {
 };
 
 const Services = () => {
+  const navigate = useNavigate();
+  
   return (
 <section id="servicios" className="relative bg-primary overflow-hidden">
       {/* Header Image */}
@@ -106,7 +106,7 @@ const Services = () => {
             <motion.button
               key={service.title}
               variants={itemVariants}
-              onClick={() => scrollToSection(service.anchor)}
+              onClick={() => navigateToService(navigate, service.anchor)}
               whileHover={{ scale: 1.02, y: -5 }}
               whileTap={{ scale: 0.98 }}
               className="group p-8 rounded-lg bg-card/10 backdrop-blur-sm border border-accent/20 hover:border-accent/50 hover:bg-card/20 transition-all duration-300 text-left cursor-pointer"
