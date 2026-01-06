@@ -68,15 +68,25 @@ const Testimonials = () => {
               (testimonial.url ? " hover:border-accent/50 hover:shadow-lg cursor-pointer" : "");
 
             return testimonial.url ? (
-              <a
+              <div
                 key={testimonial.company}
-                href={testimonial.url}
-                target="_blank"
-                rel="noopener noreferrer"
                 className={cardClasses}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  window.open(testimonial.url!, '_blank', 'noopener,noreferrer');
+                }}
+                role="link"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    window.open(testimonial.url!, '_blank', 'noopener,noreferrer');
+                  }
+                }}
               >
                 {CardContent}
-              </a>
+              </div>
             ) : (
               <div key={testimonial.company} className={cardClasses}>
                 {CardContent}
