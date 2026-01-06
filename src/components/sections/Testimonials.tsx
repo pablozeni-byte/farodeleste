@@ -4,18 +4,21 @@ const testimonials = [
       "Faro del Este nos ordenó la gestión laboral e implementó facturación electrónica y contabilidad integrada. Hoy trabajamos con procesos claros.",
     company: "Pastas Rossini",
     industry: "Industria Alimentaria",
+    url: "https://maps.app.goo.gl/SnSbjR2Jedk7RQ7L6?g_st=aw",
   },
   {
     quote:
       "Pasamos de cero digital a un sistema de gestión completo con seguimiento fiscal. Ahora tenemos control real del negocio.",
     company: "Transnahuel",
     industry: "Transporte",
+    url: null,
   },
   {
     quote:
       "El ERP transformó nuestra operación: ventas, inventarios, impuestos y sueldos en un mismo flujo. Más claridad, menos errores.",
     company: "Inter47",
     industry: "Manufactura",
+    url: "https://www.instagram.com/inter47.aberturas?igsh=M3BtYmo0MnV5YzFu",
   },
 ];
 
@@ -36,32 +39,50 @@ const Testimonials = () => {
 
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {testimonials.map((testimonial) => (
-            <div
-              key={testimonial.company}
-              className="p-8 rounded-lg bg-card border border-border"
-            >
-              {/* Quote Text */}
-              <blockquote className="text-foreground text-sm leading-relaxed mb-8">
-                "{testimonial.quote}"
-              </blockquote>
+          {testimonials.map((testimonial) => {
+            const CardContent = (
+              <>
+                {/* Quote Text */}
+                <blockquote className="text-foreground text-sm leading-relaxed mb-8">
+                  "{testimonial.quote}"
+                </blockquote>
 
-              {/* Company Info */}
-              <div className="pt-6 border-t border-border">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-md bg-secondary border border-accent/30 flex items-center justify-center">
-                    <span className="font-medium text-foreground">
-                      {testimonial.company[0]}
-                    </span>
-                  </div>
-                  <div>
-                    <p className="font-medium text-foreground text-sm">{testimonial.company}</p>
-                    <p className="text-xs text-muted-foreground">{testimonial.industry}</p>
+                {/* Company Info */}
+                <div className="pt-6 border-t border-border">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-md bg-secondary border border-accent/30 flex items-center justify-center">
+                      <span className="font-medium text-foreground">
+                        {testimonial.company[0]}
+                      </span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-foreground text-sm">{testimonial.company}</p>
+                      <p className="text-xs text-muted-foreground">{testimonial.industry}</p>
+                    </div>
                   </div>
                 </div>
+              </>
+            );
+
+            const cardClasses = "p-8 rounded-lg bg-card border border-border transition-all duration-300" + 
+              (testimonial.url ? " hover:border-accent/50 hover:shadow-lg cursor-pointer" : "");
+
+            return testimonial.url ? (
+              <a
+                key={testimonial.company}
+                href={testimonial.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cardClasses}
+              >
+                {CardContent}
+              </a>
+            ) : (
+              <div key={testimonial.company} className={cardClasses}>
+                {CardContent}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
