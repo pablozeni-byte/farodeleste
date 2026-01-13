@@ -2,6 +2,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Phone, Cpu, TrendingUp, FileCheck, Headphones, Factory, Truck, ShoppingBag, Sparkles, CircuitBoard, Settings } from "lucide-react";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import enfoqueHeader from "@/assets/enfoque-page-header.png";
 import { motion } from "framer-motion";
 
@@ -73,10 +74,13 @@ const Enfoque = () => {
       <main className="pb-24">
         {/* Header Image */}
         <div className="relative h-64 md:h-80 lg:h-[420px] w-full overflow-hidden">
-          <img 
-            src={enfoqueHeader} 
-            alt="Faro tecnológico con visión estratégica" 
+          <OptimizedImage
+            src={enfoqueHeader}
+            alt="Faro tecnológico con visión estratégica"
+            priority={true}
             className="w-full h-full object-cover"
+            containerClassName="w-full h-full"
+            placeholderColor="hsl(222 47% 11%)"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/30 to-background" />
         </div>
