@@ -4,6 +4,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Phone, Server, FileText, Calculator, Users, Check, CircuitBoard, Sparkles } from "lucide-react";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import serviciosHeader from "@/assets/servicios-page-header.png";
 import { motion } from "framer-motion";
 
@@ -106,10 +107,13 @@ const Servicios = () => {
       <main className="pb-24">
         {/* Header Image */}
         <div className="relative h-64 md:h-80 lg:h-[420px] w-full overflow-hidden">
-          <img 
-            src={serviciosHeader} 
-            alt="Servicios contables con tecnología dorada" 
+          <OptimizedImage
+            src={serviciosHeader}
+            alt="Servicios contables con tecnología dorada"
+            priority={true}
             className="w-full h-full object-cover"
+            containerClassName="w-full h-full"
+            placeholderColor="hsl(222 47% 11%)"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/30 to-background" />
         </div>

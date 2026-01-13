@@ -1,6 +1,7 @@
 import { Cpu, TrendingUp, FileCheck, Headphones } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import approachImage from "@/assets/approach-analytics.png";
 import approachHeader from "@/assets/approach-header.png";
 
@@ -54,10 +55,12 @@ const Approach = () => {
     <section className="relative bg-background overflow-hidden">
       {/* Header Image */}
       <div className="relative h-64 md:h-80 lg:h-96 w-full overflow-hidden">
-        <img 
-          src={approachHeader} 
-          alt="Strategic vision lighthouse with golden data connections" 
+        <OptimizedImage
+          src={approachHeader}
+          alt="Strategic vision lighthouse with golden data connections"
           className="w-full h-full object-cover"
+          containerClassName="w-full h-full"
+          placeholderColor="hsl(222 47% 11%)"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
       </div>
@@ -75,10 +78,12 @@ const Approach = () => {
             <div className="relative">
               {/* Golden glow effect */}
               <div className="absolute -inset-4 bg-accent/10 rounded-2xl blur-2xl" />
-              <img
+              <OptimizedImage
                 src={approachImage}
                 alt="Analytics and business intelligence visualization"
                 className="relative w-full rounded-xl border border-accent/20 shadow-2xl"
+                containerClassName="rounded-xl"
+                placeholderColor="hsl(222 47% 11%)"
               />
             </div>
           </motion.div>
