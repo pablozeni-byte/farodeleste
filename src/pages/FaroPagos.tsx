@@ -35,7 +35,7 @@ const FaroPagos = () => {
   const faroUrl = "https://easy-rut-pay.lovable.app";
 
   return (
-    <div className="min-h-screen bg-primary">
+    <div className="min-h-screen bg-primary overflow-x-hidden">
       <Header />
       <main>
         {/* Header Image - Hero Style */}
@@ -51,14 +51,14 @@ const FaroPagos = () => {
         {/* Hero Section */}
         <section className="relative overflow-hidden py-16 lg:py-20 bg-primary">
           {/* Background Tech Pattern */}
-          <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0 opacity-5 overflow-hidden pointer-events-none">
             <div className="absolute top-10 left-10">
-              <CircuitBoard className="w-32 h-32 text-accent" />
+              <CircuitBoard className="w-24 md:w-32 h-24 md:h-32 text-accent" />
             </div>
-            <div className="absolute bottom-10 right-10">
-              <Network className="w-40 h-40 text-accent" />
+            <div className="absolute bottom-10 right-4 md:right-10">
+              <Network className="w-28 md:w-40 h-28 md:h-40 text-accent" />
             </div>
-            <div className="absolute top-1/2 left-1/4 -translate-y-1/2">
+            <div className="absolute top-1/2 left-1/4 -translate-y-1/2 hidden md:block">
               <Cpu className="w-24 h-24 text-accent" />
             </div>
           </div>
@@ -134,14 +134,14 @@ const FaroPagos = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="py-20 relative bg-primary"
+          className="py-20 relative bg-primary overflow-hidden"
         >
           {/* Tech Illustration Background */}
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-10 hidden lg:block">
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-10 hidden lg:block pointer-events-none">
             <div className="relative">
-              <Globe className="w-64 h-64 text-accent" strokeWidth={0.5} />
+              <Globe className="w-48 xl:w-64 h-48 xl:h-64 text-accent" strokeWidth={0.5} />
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                <Layers className="w-32 h-32 text-accent" strokeWidth={1} />
+                <Layers className="w-24 xl:w-32 h-24 xl:h-32 text-accent" strokeWidth={1} />
               </div>
             </div>
           </div>
@@ -213,11 +213,11 @@ const FaroPagos = () => {
           className="py-20 bg-primary relative overflow-hidden"
         >
           {/* Tech Pattern */}
-          <div className="absolute left-0 top-0 opacity-5">
-            <Server className="w-48 h-48 text-accent" />
+          <div className="absolute left-0 top-0 opacity-5 pointer-events-none hidden md:block">
+            <Server className="w-32 lg:w-48 h-32 lg:h-48 text-accent" />
           </div>
-          <div className="absolute right-0 bottom-0 opacity-5">
-            <Database className="w-40 h-40 text-accent" />
+          <div className="absolute right-0 bottom-0 opacity-5 pointer-events-none hidden md:block">
+            <Database className="w-28 lg:w-40 h-28 lg:h-40 text-accent" />
           </div>
 
           <div className="container mx-auto px-4 lg:px-8 relative">
@@ -280,11 +280,11 @@ const FaroPagos = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="py-20 relative bg-primary"
+          className="py-20 relative bg-primary overflow-hidden"
         >
           {/* Tech Background Element */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5">
-            <CircuitBoard className="w-[500px] h-[500px] text-accent" strokeWidth={0.3} />
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5 pointer-events-none hidden md:block">
+            <CircuitBoard className="w-[300px] lg:w-[400px] xl:w-[500px] h-[300px] lg:h-[400px] xl:h-[500px] text-accent" strokeWidth={0.3} />
           </div>
 
           <div className="container mx-auto px-4 lg:px-8 relative">
@@ -422,11 +422,11 @@ const FaroPagos = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="py-20 relative bg-primary"
+          className="py-20 relative bg-primary overflow-hidden"
         >
           {/* Tech Background */}
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-5 hidden lg:block">
-            <Layers className="w-80 h-80 text-accent" strokeWidth={0.3} />
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-5 hidden lg:block pointer-events-none">
+            <Layers className="w-60 xl:w-80 h-60 xl:h-80 text-accent" strokeWidth={0.3} />
           </div>
 
           <div className="container mx-auto px-4 lg:px-8 relative">
@@ -495,12 +495,12 @@ const FaroPagos = () => {
           className="py-20 relative overflow-hidden bg-primary"
         >
           {/* Tech Background */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute top-0 left-1/4">
-              <Globe className="w-48 h-48 text-accent" />
+          <div className="absolute inset-0 opacity-5 overflow-hidden pointer-events-none">
+            <div className="absolute top-0 left-1/4 hidden md:block">
+              <Globe className="w-32 lg:w-48 h-32 lg:h-48 text-accent" />
             </div>
-            <div className="absolute bottom-0 right-1/4">
-              <Network className="w-56 h-56 text-accent" />
+            <div className="absolute bottom-0 right-4 md:right-1/4">
+              <Network className="w-36 lg:w-56 h-36 lg:h-56 text-accent" />
             </div>
           </div>
 
