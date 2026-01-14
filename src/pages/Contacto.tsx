@@ -7,7 +7,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin, Send, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
-import { OptimizedImage } from "@/components/ui/optimized-image";
 import contactoHeader from "@/assets/contacto-page-header.png";
 
 const CONTACT_EMAIL = "estudiocontablefarodeleste@gmail.com";
@@ -61,13 +60,10 @@ const Contacto = () => {
       <main className="pb-24">
         {/* Header Image */}
         <div className="relative h-64 md:h-80 lg:h-[420px] w-full overflow-hidden">
-          <OptimizedImage
+          <img
             src={contactoHeader}
             alt="Comunicación corporativa moderna"
-            priority={true}
             className="w-full h-full object-cover"
-            containerClassName="w-full h-full"
-            placeholderColor="hsl(222 47% 11%)"
           />
           {/* Smooth fade blending into content below */}
           <div className="absolute inset-0 bg-gradient-to-b from-transparent from-50% via-background/40 via-85% to-background" />

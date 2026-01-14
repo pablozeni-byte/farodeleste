@@ -26,7 +26,6 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { OptimizedImage } from "@/components/ui/optimized-image";
 import faroPagosHeader from "@/assets/faro-pagos-header.png";
 import faroPagosCity from "@/assets/faro-pagos-city.png";
 import faroPagosNetwork from "@/assets/faro-pagos-network.png";
@@ -41,13 +40,10 @@ const FaroPagos = () => {
       <main>
         {/* Header Image - Hero Style */}
         <div className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden">
-          <OptimizedImage
+          <img
             src={faroPagosHeader}
             alt="Pagos digitales con elementos fintech dorados"
-            priority={true}
             className="w-full h-full object-cover"
-            containerClassName="w-full h-full"
-            placeholderColor="hsl(222 47% 11%)"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/30 to-primary" />
         </div>
@@ -124,12 +120,10 @@ const FaroPagos = () => {
 
         {/* Image Separator 1 */}
         <div className="relative h-48 md:h-64 lg:h-80 w-full overflow-hidden">
-          <OptimizedImage
+          <img
             src={faroPagosCity}
             alt="Ciudad nocturna con flujos de datos dorados"
             className="w-full h-full object-cover"
-            containerClassName="w-full h-full"
-            placeholderColor="hsl(222 47% 11%)"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-primary via-transparent to-primary" />
         </div>
@@ -202,12 +196,10 @@ const FaroPagos = () => {
 
         {/* Image Separator 2 */}
         <div className="relative h-48 md:h-64 lg:h-80 w-full overflow-hidden">
-          <OptimizedImage
+          <img
             src={faroPagosNetwork}
             alt="Red de pagos seguros con flujos dorados"
             className="w-full h-full object-cover"
-            containerClassName="w-full h-full"
-            placeholderColor="hsl(222 47% 11%)"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-primary via-transparent to-primary" />
         </div>
@@ -274,12 +266,10 @@ const FaroPagos = () => {
 
         {/* Image Separator 3 */}
         <div className="relative h-48 md:h-64 lg:h-80 w-full overflow-hidden">
-          <OptimizedImage
+          <img
             src={faroPagosMobile}
             alt="Dispositivo móvil con interfaz de pagos dorada"
             className="w-full h-full object-cover"
-            containerClassName="w-full h-full"
-            placeholderColor="hsl(222 47% 11%)"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-primary via-transparent to-primary" />
         </div>
