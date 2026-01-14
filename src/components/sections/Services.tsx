@@ -1,7 +1,6 @@
 import { Server, FileText, Calculator, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { OptimizedImage } from "@/components/ui/optimized-image";
 import servicesImage from "@/assets/services-data-flow.png";
 import servicesHeader from "@/assets/services-header.png";
 
@@ -68,23 +67,19 @@ const Services = () => {
 <section id="servicios" className="relative bg-primary overflow-hidden">
       {/* Header Image */}
       <div className="relative h-64 md:h-80 lg:h-96 w-full overflow-hidden">
-        <OptimizedImage
+        <img
           src={servicesHeader}
           alt="Business services visualization with golden technology elements"
           className="w-full h-full object-cover"
-          containerClassName="w-full h-full"
-          placeholderColor="hsl(222 47% 11%)"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/50 to-primary" />
       </div>
 
       <div className="absolute inset-0 top-64 md:top-80 lg:top-96">
-        <OptimizedImage
+        <img
           src={servicesImage}
           alt="Data analytics visualization"
           className="w-full h-full object-cover opacity-30"
-          containerClassName="w-full h-full"
-          placeholderColor="hsl(222 47% 11%)"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary via-primary/95 to-primary" />
       </div>

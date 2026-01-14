@@ -1,6 +1,5 @@
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { OptimizedImage } from "@/components/ui/optimized-image";
 import heroBackground from "@/assets/hero-lighthouse.png";
 
 const Hero = () => {
@@ -10,13 +9,10 @@ const Hero = () => {
     <section className="relative flex flex-col">
       {/* Hero Image Container */}
       <div className="relative w-full h-[60vh] md:h-[70vh]">
-        <OptimizedImage
+        <img
           src={heroBackground}
           alt="Faro del Este - Estudio contable tecnológico"
-          priority={true}
-          className="w-full h-full object-cover"
-          containerClassName="absolute inset-0"
-          placeholderColor="hsl(222 47% 11%)"
+          className="absolute inset-0 w-full h-full object-cover"
         />
         
         {/* Subtle gradient overlay at bottom for transition */}
