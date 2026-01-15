@@ -58,6 +58,8 @@ const Approach = () => {
           src={approachHeader}
           alt="Strategic vision lighthouse with golden data connections"
           className="w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
       </div>
@@ -79,6 +81,8 @@ const Approach = () => {
                 src={approachImage}
                 alt="Analytics and business intelligence visualization"
                 className="relative w-full rounded-xl border border-accent/20 shadow-2xl"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </motion.div>

@@ -64,6 +64,8 @@ const Contacto = () => {
             src={contactoHeader}
             alt="Comunicación corporativa moderna"
             className="w-full h-full object-cover"
+            fetchPriority="high"
+            decoding="async"
           />
           {/* Smooth fade blending into content below */}
           <div className="absolute inset-0 bg-gradient-to-b from-transparent from-50% via-background/40 via-85% to-background" />

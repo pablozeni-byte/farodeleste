@@ -110,6 +110,8 @@ const Servicios = () => {
             src={serviciosHeader}
             alt="Servicios contables con tecnología dorada"
             className="w-full h-full object-cover"
+            fetchPriority="high"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/30 to-background" />
         </div>
