@@ -13,6 +13,8 @@ const Hero = () => {
           src={heroBackground}
           alt="Faro del Este - Estudio contable tecnológico"
           className="absolute inset-0 w-full h-full object-cover"
+          fetchPriority="high"
+          decoding="async"
         />
         
         {/* Subtle gradient overlay at bottom for transition */}

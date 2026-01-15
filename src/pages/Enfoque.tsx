@@ -77,6 +77,8 @@ const Enfoque = () => {
             src={enfoqueHeader}
             alt="Faro tecnológico con visión estratégica"
             className="w-full h-full object-cover"
+            fetchPriority="high"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/30 to-background" />
         </div>

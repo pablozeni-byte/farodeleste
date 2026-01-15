@@ -71,6 +71,8 @@ const Services = () => {
           src={servicesHeader}
           alt="Business services visualization with golden technology elements"
           className="w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/50 to-primary" />
       </div>
@@ -80,6 +82,8 @@ const Services = () => {
           src={servicesImage}
           alt="Data analytics visualization"
           className="w-full h-full object-cover opacity-30"
+          loading="lazy"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary via-primary/95 to-primary" />
       </div>

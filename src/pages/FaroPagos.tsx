@@ -44,6 +44,8 @@ const FaroPagos = () => {
             src={faroPagosHeader}
             alt="Pagos digitales con elementos fintech dorados"
             className="w-full h-full object-cover"
+            fetchPriority="high"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/30 to-primary" />
         </div>
@@ -124,6 +126,8 @@ const FaroPagos = () => {
             src={faroPagosCity}
             alt="Ciudad nocturna con flujos de datos dorados"
             className="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-primary via-transparent to-primary" />
         </div>
@@ -200,6 +204,8 @@ const FaroPagos = () => {
             src={faroPagosNetwork}
             alt="Red de pagos seguros con flujos dorados"
             className="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-primary via-transparent to-primary" />
         </div>
@@ -270,6 +276,8 @@ const FaroPagos = () => {
             src={faroPagosMobile}
             alt="Dispositivo móvil con interfaz de pagos dorada"
             className="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-primary via-transparent to-primary" />
         </div>
