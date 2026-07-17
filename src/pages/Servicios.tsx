@@ -85,7 +85,7 @@ const itemVariants = {
 
 const Servicios = () => {
   const location = useLocation();
-  const whatsappUrl = "https://wa.me/59898645841?text=Hola%2C%20vi%20la%20web%20de%20Faro%20del%20Este%20y%20quiero%20ordenar%20mis%20n%C3%BAmeros.";
+  const whatsappUrl = "https://wa.me/59898465706?text=Hola%2C%20vi%20la%20web%20de%20Faro%20del%20Este%20y%20quiero%20ordenar%20mis%20n%C3%BAmeros.";
 
   useEffect(() => {
     if (location.hash) {

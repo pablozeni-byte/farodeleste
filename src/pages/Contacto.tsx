@@ -9,7 +9,7 @@ import { Phone, Mail, MapPin, Send, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import contactoHeader from "@/assets/contacto-page-header.png";
 
-const CONTACT_EMAIL = "estudiocontablefarodeleste@gmail.com";
+const CONTACT_EMAIL = "soporte@farodeleste.com";
 
 const Contacto = () => {
   const { toast } = useToast();
@@ -19,7 +19,7 @@ const Contacto = () => {
     mensaje: "",
   });
 
-  const whatsappUrl = "https://wa.me/59898645841?text=Hola%2C%20vi%20la%20web%20de%20Faro%20del%20Este%20y%20quiero%20ordenar%20mis%20n%C3%BAmeros.";
+  const whatsappUrl = "https://wa.me/59898465706?text=Hola%2C%20vi%20la%20web%20de%20Faro%20del%20Este%20y%20quiero%20ordenar%20mis%20n%C3%BAmeros.";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -185,7 +185,7 @@ const Contacto = () => {
                   <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                     <Button variant="whatsapp" size="default" className="w-full gap-2">
                       <Phone className="w-4 h-4" />
-                      +598 98 645 841
+                      098 465 706
                     </Button>
                   </a>
                 </div>
@@ -206,10 +206,10 @@ const Contacto = () => {
                     <div>
                       <p className="text-sm font-medium text-foreground">Teléfono</p>
                       <a
-                        href="tel:+59898645841"
+                        href="tel:+59898465706"
                         className="text-sm text-muted-foreground hover:text-accent transition-colors"
                       >
-                        +598 98 645 841
+                        098 465 706
                       </a>
                     </div>
                   </div>
