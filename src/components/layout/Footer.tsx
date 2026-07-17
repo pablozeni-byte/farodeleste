@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const whatsappUrl = "https://wa.me/59898645841?text=Hola%2C%20vi%20la%20web%20de%20Faro%20del%20Este%20y%20quiero%20ordenar%20mis%20n%C3%BAmeros.";
+  const whatsappUrl = "https://wa.me/59898465706?text=Hola%2C%20vi%20la%20web%20de%20Faro%20del%20Este%20y%20quiero%20ordenar%20mis%20n%C3%BAmeros.";
 
   return (
     <footer className="bg-primary text-primary-foreground">
@@ -37,14 +37,14 @@ const Footer = () => {
                 className="flex items-center gap-3 text-primary-foreground/70 hover:text-accent transition-colors"
               >
                 <Phone className="w-4 h-4 text-accent" />
-                +598 98 645 841
+                098 465 706
               </a>
               <a
-                href="mailto:estudiocontablefarodeleste@gmail.com"
+                href="mailto:soporte@farodeleste.com"
                 className="flex items-center gap-3 text-primary-foreground/70 hover:text-accent transition-colors"
               >
                 <Mail className="w-4 h-4 text-accent" />
-                <span className="break-all">estudiocontablefarodeleste@gmail.com</span>
+                <span className="break-all">soporte@farodeleste.com</span>
               </a>
               <div className="flex items-center gap-3 text-primary-foreground/70">
                 <MapPin className="w-4 h-4 text-accent" />
