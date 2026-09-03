@@ -1,73 +1,113 @@
-# Welcome to your Lovable project
+# Faro del Este
 
-## Project info
+Construir un sitio web moderno, profesional y tecnológico para:
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Marca:
+Faro del Este — Estudio Contable
 
-## How can I edit this code?
+Propósito del sitio:
+Transmitir el diferencial de un estudio contable con enfoque tecnológico, impulsar confianza y la decisión de contratación. Debe verse como un estudio boutique + consultora tech.
 
-There are several ways of editing your application.
+Público objetivo:
+PYMEs que buscan control financiero real, decisiones con datos y automatización de procesos.
 
-**Use Lovable**
+Estilo visual:
+- Estética premium: azul profundo + negro + acentos dorado metálico (#D4AF37 y #B9973E)
+- Fondo mayormente oscuro con texto claro
+- Íconos finos y lineales en dorado metálico
+- Nada caricaturesco ni infantil
+- UX clara, ágil, con llamadas a la acción siempre visibles
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Tono de comunicación:
+- Profesional, claro, directo
+- Tecnología aplicada a gestión real
+- Enfoque de negocio y decisiones basadas en datos
+- Cero humo corporativo
 
-Changes made via Lovable will be committed automatically to this repo.
+Estructura del sitio y contenido:
 
-**Use your preferred IDE**
+1) Home
+- H1: Contabilidad + Tecnología para decisiones de negocio
+- Subtítulo: ERP, impuestos y gestión financiera para empresas que quieren crecer con datos.
+- Botón principal: “Hablemos por WhatsApp”
+- WhatsApp: +598 98 645 841
+- Mensaje precargado: “Hola, vi la web de Faro del Este y quiero ordenar mis números.”
+- Frase de confianza: “Sin compromiso, te orientamos con gusto.”
+- Sección Servicios en 4 tarjetas:
+   a) ERP & Integración
+   b) Contabilidad & Reportes
+   c) Impuestos & Planificación
+   d) Sueldos & Gestión laboral
+- Sección “Nuestro Enfoque”
+   Título: Somos tu aliado contable con visión tecnológica
+   Bullets:
+     + Contabilidad y tecnología integradas
+     + ERP, procesos y reportes útiles para gerencia
+     + Planificación fiscal con control
+     + Acompañamiento continuo
+- Sección Casos de éxito (3)
+   Cliente 1:
+   “Faro del Este nos ordenó la gestión laboral e implementó facturación electrónica y contabilidad integrada. Hoy trabajamos con procesos claros y tomamos decisiones con datos.”
+   — Pastas Rossini · Industria Alimentaria
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+   Cliente 2:
+   “Pasamos de cero digital a un sistema de gestión completo con seguimiento fiscal y administración profesional. Ahora tenemos control real del negocio.”
+   — Transnahuel · Transporte
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+   Cliente 3:
+   “El ERP implementado por Faro del Este transformó nuestra operación: ventas, inventarios, impuestos y sueldos en un mismo flujo. Más claridad, menos errores.”
+   — Inter47 · Manufactura
 
-Follow these steps:
+- CTA final: “Hablemos por WhatsApp”
+
+2) Servicios (página independiente)
+Título: Soluciones que ordenan, automatizan y hacen crecer
+Cada servicio debe incluir:
+- Qué hacemos
+- Qué problema resuelve
+- Qué resultado genera
+
+3) Nuestro Enfoque
+Título: Somos tu aliado contable con visión tecnológica
+Texto breve explicando diferencial contador + ERP
+Bullets: +10 años / Integración sistemas / Reportes gerenciales / Industria-servicio-comercio
+
+4) Contacto
+Formulario simple (Nombre, Email, Empresa, Mensaje)
+Botón secundario WhatsApp
+
+Frases de apoyo / CTAs:
+- “Decisiones basadas en números reales.”
+- “Menos caos financiero. Más control.”
+- “Tecnología + contabilidad = una empresa que crece.”
+
+Optimización SEO inicial:
+- Palabras clave: contador tecnológico Uruguay, ERP PYMEs Uruguay, contabilidad para empresas, planificación fiscal Uruguay
+- Títulos H1/H2 bien jerarquizados
+- Responsive y carga rápida
+
+Objetivo final del sitio:
+Que quien visite decida que Faro del Este es la mejor opción para su negocio.
+
+This project was built with [Lovable](https://lovable.dev).
+
+**Live app**: https://farodeleste.lovable.app
+
+## Build with Lovable
+
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/43f1440a-d415-43c6-b1a3-623242b14090).
+
+- **Ship faster**: describe what you want to build and Lovable handles the code.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+
+## Development
+
+Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
+git clone <this-repository-url>
+cd <repository-name>
 npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
